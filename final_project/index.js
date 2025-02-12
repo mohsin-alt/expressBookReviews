@@ -40,15 +40,5 @@ const PORT = 5000;
 
 app.use("/customer", customer_routes);
 app.use("/", genl_routes);
-app.get("/books", async (req, res) => {
-  try {
-    const response = await axios.get("http://localhost:5000"); // Replace with actual API
 
-    res.status(200).json({ message: "iam her" });
-  } catch (error) {
-    res
-      .status(500)
-      .json({ message: "Failed to fetch books", error: error.message });
-  }
-});
 app.listen(PORT, () => console.log("Server is running"));
